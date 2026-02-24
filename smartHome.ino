@@ -10,6 +10,7 @@
 #define ECHO_PIN    26
 #define LED_PIN     27
 #define OLED_ADDR   0x3C
+#define TIMEZONE    ZH
 
 Ultra ultra(TRIG_PIN, ECHO_PIN);
 
@@ -50,7 +51,7 @@ void Task_Ultrasonic(void *pvParameters) {
 void Task_Display(void *pvParameters) {
   connect("1206", "13867627688", OLED_ADDR);
   
-  init_time(ZH);
+  init_time(TIMEZONE);
   
   while(1) {
     clear();
@@ -94,5 +95,4 @@ void loop() {
   }
   
   vTaskDelay(100 / portTICK_PERIOD_MS);
-
 }
