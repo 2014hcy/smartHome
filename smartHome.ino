@@ -1,4 +1,3 @@
-
 #include "oled.h"
 #include "easy_WiFi.h"
 #include "easy_DHT.h"
@@ -95,4 +94,5 @@ void loop() {
   }
   
   vTaskDelay(100 / portTICK_PERIOD_MS);
+
 }
